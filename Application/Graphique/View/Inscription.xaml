@@ -1,0 +1,33 @@
+﻿<Window x:Class="Graphique.View.Inscription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Graphique.View"
+        mc:Ignorable="d"
+        Title="Inscription" Height="375.993" Width="307.271" WindowStyle="ToolWindow">
+    <Grid>
+
+        <Label x:Name="Prénom" Content="Prénom :" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="26" FontSize="15"/>
+        <TextBox Name="Recup_Prènom" Margin="117,97,0,0" Height="26.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167" BorderBrush="#FF4C4C4C"/>
+
+        <Label x:Name="Identifiant" Content="Identifiant :" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Height="26" FontSize="15"/>
+        <TextBox Name="Recup_Identifiant" Margin="117,146,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167" BorderBrush="#FF050404"/>
+
+        <Label x:Name="Email" Content="Email :" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Height="26" FontSize="15" RenderTransformOrigin="0.318,2.738"/>
+        <TextBox Name="Recup_Email" Margin="117,190,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167" BorderBrush="#FF050404"/>
+
+        <Label x:Name="Mdp" Content="Mot de passe :" HorizontalAlignment="Left" Margin="5,233,0,0" VerticalAlignment="Top" Height="26" FontSize="15" RenderTransformOrigin="0.318,2.738"/>
+        <TextBox Name="Recup_Mdp" Margin="117,233,0,0" Height="26.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="167" BorderBrush="#FF050404"/>
+
+        <Button x:Name="Suivant" Content="Suivant" HorizontalAlignment="Left" Margin="209,309,0,0" VerticalAlignment="Top" Width="75" Height="22" RenderTransformOrigin="0.293,-0.467" Click="Suivant_Click"/>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="75" Height="22" Foreground="#FF020101" BorderBrush="#FFD95757" Click="Retour_Click" />
+
+        <Label x:Name="Etoile" Content="*" HorizontalAlignment="Left" Margin="46,177,0,0" VerticalAlignment="Top" Height="23" Width="17"/>
+        <Label x:Name="Etoile1" Content="*" HorizontalAlignment="Left" Margin="95,215,0,0" VerticalAlignment="Top" Height="23" Width="17"/>
+        <Label x:Name="Etoile2" Content="*" HorizontalAlignment="Left" Margin="78,128,0,0" VerticalAlignment="Top" Height="23" Width="17"/>
+        <Label x:Name="Etoile3" Content="* Les champs obligatoires" HorizontalAlignment="Left" Margin="0,276,0,0" VerticalAlignment="Top" Height="28" Width="148" FontStyle="Italic"/>
+        <Label x:Name="label" Content="Bienvenue sur la page d'inscription" HorizontalAlignment="Left" Margin="63,10,0,0" VerticalAlignment="Top" Foreground="#FF940D0D"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Graphique.View.UserControlsAdmin.GestionSport_UsersControls.Aide"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Graphique.View.UserControlsAdmin.GestionSport_UsersControls"
+             mc:Ignorable="d" Height="243.544">
+    <Grid>
+        <TextBlock Text="Bienvenue sur l'aide de la page de gestion de l'application , pour créer un sport il faut cliquer sur AJOUT SPORT , puis rentrer le nom du nouveau sport souhaiter.Par défault , le sport sera créer avec 1 actualité et 1 championnat. Pour les modifier il faut aller dans l'onglet SUPPRIMER/MODIFIER UN SPORT , vous selectionnez le sport , puis en double-cliquant sur l'actualite/championnat , une page de modification apparaitra.Vous pouvez dans cette onglet , supprimer un sport , ou alors rajouter un championnat pour le sport choisit." TextWrapping="Wrap" Margin="0,77,0.2,0.2"/>
+        <Label x:Name="label" Content="L'aide d'utilisation de la page d'admin" HorizontalAlignment="Left" Margin="438,10,0,0" VerticalAlignment="Top" Foreground="Red" FontStyle="Italic"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Graphique.View.UserControlsAdmin.SuppUtilisateur"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Graphique.View.UserControlsAdmin"
+             mc:Ignorable="d" Background="White">
+    <Grid Height="230" Width="311">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="label" Content="Sélectionner l'utilisateur à modifier" Margin="77,28,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="206" Foreground="#FF910000"/>
+
+        <ListBox x:Name="ListeUsers" Margin="15,72,0,46" ItemsSource="{Binding LesUtilisateur}" HorizontalAlignment="Left" Width="68" SelectionChanged="ListeUsers_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label Content="{Binding Nom}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+
+        <Label x:Name="nom" Content="Nom" Grid.Column="1" HorizontalAlignment="Left" Margin="6.8,70,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Prenom" Content="Prénom" Grid.Column="1" HorizontalAlignment="Left" Margin="6.8,101,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Adresse" Content="Adresse" Grid.Column="1" HorizontalAlignment="Left" Margin="5.8,132,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Mdp" Content="Mot de passe" Grid.Column="1" HorizontalAlignment="Left" Margin="5.8,163,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="textBlock_Nom" Grid.Column="1" HorizontalAlignment="Left" Margin="91.8,75,0,0" TextWrapping="Wrap" Text="{Binding Nom}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Prenom" Grid.Column="1" HorizontalAlignment="Left" Margin="91.8,107,0,0" TextWrapping="Wrap" Text="{Binding Prenom}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Adresse" Grid.Column="1" HorizontalAlignment="Left" Margin="91.8,137,0,0" TextWrapping="Wrap" Text="{Binding Adresse}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Mdp" Grid.Column="1" HorizontalAlignment="Left" Margin="91.8,168,0,0" TextWrapping="Wrap" Text="{Binding Mdp}" VerticalAlignment="Top"/>
+
+        <Button x:Name="suppresion" Content="Supprimer" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10.2,5" VerticalAlignment="Bottom" Width="75" Click="suppresion_Click"/>
+        <Button x:Name="Passer_admin" Content="Mettre admin" HorizontalAlignment="Right" Margin="0,0,10,5.6" Width="81" Height="19" VerticalAlignment="Bottom" Click="Passer_admin_Click"/>
+
+
+
+    </Grid>
+</UserControl>

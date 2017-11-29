@@ -1,0 +1,83 @@
+﻿<Window x:Class="Graphique.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Graphique"
+        xmlns:local1="clr-namespace:Graphique.View.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Name="root" Height="690.8" Width="1043.2"
+        >
+    <Window.Resources>
+        <ResourceDictionary Source="Ressources.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FFF93F3F" Height="80" Margin="2,0,-0.2,0" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+
+        <Image Source="/Image/icone.jpg" Grid.ColumnSpan="2" Grid.Column="1" Margin="78.8,98,37.6,9.6"/>
+        <ListBox Style="{StaticResource ResourceKey=ListBox}"  x:Name="liSports"  ItemsSource="{Binding LesSports }" Grid.Column="0" IsSynchronizedWithCurrentItem="True" SelectionChanged="liSports_SelectionChanged"  Grid.Row="1" VerticalAlignment="Top"  Margin="0,9.8,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label Content="{Binding Nom}" FontSize="20"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <TabControl x:Name="tabControl" Grid.Row="1" Grid.ColumnSpan="3" Margin="10.2,10,9.8,9.6" Grid.RowSpan="3" Grid.Column="1">
+
+            <TabItem Header="Actualité">
+                <local1:ActuRugby LiActualiteActuRugby="{Binding ElementName=root , Path=LiActualite}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding Path=LiChampionnat[0].Nom}" x:Name="ItemChampionnat">
+                <local1:Top14 DicoJCTop14="{Binding ElementName=root , Path=DicoJC}"/>
+            </TabItem>
+
+            <TabItem Header="{Binding Path=LiChampionnat[1].Nom}" x:Name="ItemChampionnat2">
+                <local1:ProD2/>
+            </TabItem>
+
+            <TabItem Header="Les équipes" x:Name="ItemChampionnat3">
+                <local1:LesEquipes Users="{Binding ElementName=root , Path=Users}" Championnat1="{Binding ElementName=root, Path=Championnat1}"/>
+            </TabItem>
+
+
+        </TabControl>
+
+        <Button  x:Name="GestionAdmin" Content="Mode Admin " Grid.Column="3" HorizontalAlignment="Left" Margin="0.2,30,-0.2,0" VerticalAlignment="Top" Width="104" Click="Admin"/>
+
+        <Label x:Name="Identifiant"  Content="Identifiant : " Margin="10,5,0,0" Height="23" Width="300" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="MotDePasse"  Content="Mot de passe : " Margin="0,28,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"/>
+
+        <TextBox Name="Recup_Nom"  Margin="102,7,10.2,0" Grid.Row="0" Height="18" VerticalAlignment="Top"/>
+        <PasswordBox  Name="Recup_Mdp"  Margin="102,34,10.2,0" Grid.Row="0" Height="18" VerticalAlignment="Top"/>
+
+        <Button x:Name="Connexion"  Content="Se connecter" HorizontalAlignment="Left" Margin="75.8,31,0,0" VerticalAlignment="Top" Width="97" Grid.Column="1" Click="Connexion_Click" RenderTransformOrigin="0.464,-0.75"/>
+
+        <Label x:Name="Inscription"  Content="S'inscrire" Margin="10,57,0,0" FontSize="10" Foreground="#FF1C12BF" MouseDoubleClick="Inscription_MouseDoubleClick" HorizontalAlignment="Left" Width="60" Height="23" VerticalAlignment="Top"/>
+
+        <Button x:Name="GestionCompte" Content="Gestion du compte" Grid.Column="2" HorizontalAlignment="Left" Margin="54.6,31,0,0" VerticalAlignment="Top" Width="145" Click="GestionCompte_Click"/>
+
+        <Button x:Name="deconnexion" Content="Déconnexion" Margin="78.8,31,0,0" VerticalAlignment="Top" Click="deconnexion_Click" HorizontalAlignment="Left" Width="94" Grid.Column="1"/>
+
+
+
+
+    </Grid>
+</Window>

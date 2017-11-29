@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Graphique.View.UserControlsAdmin.AjoutSport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Graphique.View.UserControlsAdmin"
+             mc:Ignorable="d"
+             Name="root" Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="label_sport" Content="Nom du sport : " HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="sport_nom" HorizontalAlignment="Left" Height="23" Margin="154,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="ajoutsport" Content="Ajouter le sport" HorizontalAlignment="Right" Width="115" Grid.Column="1" Margin="0,0,0.2,0.4" Height="19" VerticalAlignment="Bottom" Click="ajoutsport_Click"/>
+        <Label x:Name="label" Content="Ajout d'un sport dans la liste" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Foreground="Red"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Graphique.View.UserControlsAdmin.GestionSport_UsersControls.ModifActualite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Graphique.View.UserControlsAdmin.GestionSport_UsersControls"
+        mc:Ignorable="d"
+        Title="ModifActualite" Height="300" Width="350" MaxHeight="300" MaxWidth="300" MinHeight="300" MinWidth="350" WindowStyle="None">
+    <Grid>
+        <Label x:Name="Titre" Content="Titre" HorizontalAlignment="Left" Margin="25,62,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Recup_Titre" HorizontalAlignment="Left" Height="23" Margin="129,65,0,0" TextWrapping="Wrap" Text="{Binding Titre}" VerticalAlignment="Top" Width="120"/>
+
+        <Label x:Name="description" Content="Description" HorizontalAlignment="Left" Margin="25,103,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Recup_description" HorizontalAlignment="Left" Height="91" Margin="129,103,0,0" TextWrapping="Wrap" Text="{Binding Descritpion}" VerticalAlignment="Top" Width="203"/>
+
+        <Label x:Name="label1" Content="Modifier l'article" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Date" Content="Date d'écriture" HorizontalAlignment="Left" Margin="25,199,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Recup_Date" HorizontalAlignment="Left" Height="23" Margin="129,199,0,0" TextWrapping="Wrap" Text="{Binding DateArticle , Converter={StaticResource dateTime2StringConverter}}" VerticalAlignment="Top" Width="120"/>
+
+        <Button x:Name="retour" Content="Retour" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="75" Click="retour_Click"/>
+        <Button x:Name="sauvegarde" Content="Sauvegarde" HorizontalAlignment="Left" Margin="111,241,0,0" VerticalAlignment="Top" Width="75" Click="sauvegarde_Click"/>
+
+        <Button x:Name="supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="209,241,0,0" VerticalAlignment="Top" Width="75" Click="supprimer_Click"/>
+
+
+
+    </Grid>
+</Window>

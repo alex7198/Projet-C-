@@ -1,0 +1,32 @@
+﻿<Window x:Class="Graphique.PageAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Graphique"
+        mc:Ignorable="d"
+        Title="PageAdmin" Height="539.895" Width="842.475">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+        <Label  Content="Selectionner l'option souhaiter : "  Grid.Column="0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="SelectionOption" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.Column="0" SelectionChanged="SelectionOption_SelectionChanged" Height="29" RenderTransformOrigin="0.5,0.5" />
+
+
+        <StackPanel Name="StackOption" Grid.ColumnSpan="2" Margin="0,105,0,43.4" Grid.RowSpan="2"/>
+
+        <Label x:Name="label" Content="Vous êtes sur la page de gestion de la page" HorizontalAlignment="Left" Margin="10.4,13,0,0" VerticalAlignment="Top" Grid.Column="1" Background="{x:Null}" Foreground="Red"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,68 @@
+﻿<Window x:Class="Graphique.View.UserControlsAdmin.GestionSport_UsersControls.ModifChampionnat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Graphique.View.UserControlsAdmin.GestionSport_UsersControls"
+        mc:Ignorable="d"
+        Title="ModifChampionnat" Height="770.588" Width="406.4">
+    <Grid>
+        <Label x:Name="Nom_Championnat" Content="Nom :" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LesEquipes" Content="Les équipes :" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="121,76,0,0" TextWrapping="Wrap" Text="{Binding Nom, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <ListBox Margin="121,104,51,217" Name="ListEquipe" ItemsSource="{Binding LiEquipe}" SelectionChanged="ListEquipe_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Nom}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="SuppressionEquipe" Content="Supprimer Equipe" HorizontalAlignment="Right" Margin="0,0,51,192" VerticalAlignment="Bottom" Click="SuppressionEquipe_Click"/>
+
+
+        <Label x:Name="AfficheE1" Content="Equipe 1 : " HorizontalAlignment="Left" Margin="6,0,0,123" VerticalAlignment="Bottom"/>
+        <Label x:Name="Equipe1_nom" Content="{Binding Nom}" Margin="88,0,0,130" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <Label x:Name="AfficheE2" Content="Equipe 2 : " HorizontalAlignment="Left" Margin="6,0,0,92" VerticalAlignment="Bottom"/>
+        <Label x:Name="Equipe2_nom" Content="{Binding Nom}" Margin="88,0,0,97" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+
+        <Button x:Name="créerRS" Content="Créer" HorizontalAlignment="Right" Margin="0,0,122,5.8" Width="75" Height="20" VerticalAlignment="Bottom" Click="button_Click"/>
+
+        <Label x:Name="label" Content="Créer une rencontre Sportive : " HorizontalAlignment="Left" Margin="6,0,0,154" Height="26" VerticalAlignment="Bottom" Foreground="#FFBC0101"/>
+        <Label x:Name="label1" Content="Pour la journée : " HorizontalAlignment="Left" Margin="6,0,0,66" VerticalAlignment="Bottom"/>
+
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="105,0,0,66" VerticalAlignment="Bottom" ItemsSource="{Binding DictionnaireClassement.Keys}" IsSynchronizedWithCurrentItem="True" SelectionChanged="comboBox_SelectionChanged"/>
+        <Label x:Name="ScoreE1" Content="Score E1: " HorizontalAlignment="Left" Margin="10,0,0,35" VerticalAlignment="Bottom"/>
+        <Label x:Name="ScoreE2" Content="Score E2: " HorizontalAlignment="Left" Margin="10,0,0,9" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Recup_Equipe1" HorizontalAlignment="Left" Height="23" Margin="105,0,0,34" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="57"/>
+        <TextBox x:Name="Recup_Equipe2" HorizontalAlignment="Left" Height="23" Margin="105,0,0,6" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="57"/>
+        <Button x:Name="ajoutJournées" Content="Ajouter journée" Margin="215,0,0,65.8" Click="ajoutJournées_Click" Height="21" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="96"/>
+
+        <GroupBox x:Name="ajoutEquipe" Header="Ajouter une équipe" HorizontalAlignment="Right" Margin="0,0,19.4,0" VerticalAlignment="Top" Height="71" Width="242" BorderBrush="{x:Null}" Foreground="#FFCD0909">
+            <Grid Height="49" Margin="0,0,-0.2,-0.2" VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ajout" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Right" Margin="0,3,-0.2,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Click="ajout_Click"/>
+
+                <Label x:Name="nom" Content="Nom :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+                <Label x:Name="describ" Content="Description :" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.057,-0.319" Width="75" Margin="0,0,0,-0.4"/>
+                <TextBox x:Name="recup_nomEq" Height="23" Margin="75,1,1,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+                <TextBox x:Name="recup_description" Height="50"  Margin="75,0,1,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+
+            </Grid>
+        </GroupBox>
+        
+  
+
+
+
+    </Grid>
+</Window>
